@@ -15,7 +15,8 @@ echo "mail sent successfully to bhaskaro@gmai.com"
    }
    stage('deploy to tomcat'){
       echo "deployihng to tomat now"
-      sh "curl --upload-file ${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war http://deployer:deployer@localhost:8080/manager/deploy?path=/SpringBootTest&update=true"
+      //sh "curl --upload-file ${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war http://deployer:deployer@localhost:8080/manager/deploy?path=/SpringBootTest&update=true"
+      sh "curl -v -u deployer:deployer -T ${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war http://localhost:8080/manager/deploy?path=/SpringBootTest&update=true"
       echo "deployed to tomat now"
    }
 }
