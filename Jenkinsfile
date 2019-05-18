@@ -21,7 +21,7 @@ node{
       echo "deployihng to tomat now"
       //sh "curl -X POST --upload-file ${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war http://deployer:deployer@localhost:8080/manager/deploy?path=/SpringBootTest&update=true"
       //sh "curl -X POST -v -u deployer:deployer -T ${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war http://localhost:8080/manager/deploy?path=/SpringBootTest&update=true"
-      sh "wget --http-user=admin --http-password=welcome1 'http://localhost:8080/manager/text/deploy?war=file:${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war&path=/SpringBootTest&update=true' -O -"
+      sh "wget --http-user=admin --http-password=welcome1 'http://localhost:8080/manager/text/deploy?war=file:${WORKSPACE}/target/SpringBootTest-0.0.1-SNAPSHOT.war&path=/SpringBootTest&update=false' -O -"
       echo "deployed to tomat now"
    }
 }
