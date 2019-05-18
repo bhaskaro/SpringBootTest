@@ -15,7 +15,7 @@ node{
    }
 
    stage('undeploy the app in tomcat'){
-      sh "wget --http-user=admin --http-password=welcome1 "http://localhost:8080/manager/text/undeploy?path=/SpringBootTest" -O -"
+      sh "wget --http-user=admin --http-password=welcome1 'http://localhost:8080/manager/text/undeploy?path=/SpringBootTest' -O -"
    }
    stage('deploy to tomcat'){
       echo "deployihng to tomat now"
